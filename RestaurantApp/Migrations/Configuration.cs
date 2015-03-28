@@ -31,6 +31,12 @@ namespace RestaurantApp.Migrations
                         Name = "Chocolate Profiteroles",
                         Description = "Description of profiteroles",
                         Price = 6.49f
+                    },
+                    new Dish
+                    {
+                        Name = "Steak and Ale Pie",
+                        Description = "A pie with steak and ale in it..",
+                        Price = 9.99f
                     }
             );
         }
