@@ -1,2 +1,0 @@
-# RestauRater
-Restaurant Rating App
