@@ -13,8 +13,6 @@ namespace RestaurantApp.Controllers
         // GET: Dish
         public ActionResult Index()
         {
-            throw new Exception("Break all the things");
-
             var dishes = _db.Dishes.ToList();
 
             return View(dishes);
