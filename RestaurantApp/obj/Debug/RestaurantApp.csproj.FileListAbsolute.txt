@@ -105,3 +105,7 @@ C:\dev\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.csproj.GenerateResour
 C:\dev\RestaurantApp\RestaurantApp\obj\Debug\ApplicationInsights.config
 C:\dev\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.dll
 C:\dev\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.pdb
+C:\Users\Dan\Source\Repos\RestauRater\RestaurantApp\obj\Debug\RestaurantApp.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Source\Repos\RestauRater\RestaurantApp\obj\Debug\RestaurantApp.Migrations.InitialCreate.resources
+C:\Users\Dan\Source\Repos\RestauRater\RestaurantApp\obj\Debug\RestaurantApp.csproj.GenerateResource.Cache
+C:\Users\Dan\Source\Repos\RestauRater\RestaurantApp\obj\Debug\RestaurantApp.dll

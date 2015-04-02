@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using System;
 
 namespace RestaurantApp.Controllers
 {
@@ -12,6 +13,8 @@ namespace RestaurantApp.Controllers
         // GET: Dish
         public ActionResult Index()
         {
+            throw new Exception("Break all the things");
+
             var dishes = _db.Dishes.ToList();
 
             return View(dishes);
