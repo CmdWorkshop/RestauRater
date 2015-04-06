@@ -25,7 +25,7 @@
             ],
             drinks: [
                 { name: "House White", price: 7.95 },
-                { name: "House White", price: 7.95 },
+                { name: "House Red", price: 7.95 },
                 { name: "Still Water", price: 4.75 },
                 { name: "Coke", price: 3.25 },
             ]
