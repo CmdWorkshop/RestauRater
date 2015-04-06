@@ -80,7 +80,7 @@
     <Content Include="index.html" />
     <Content Include="scripts\android-stock-browser-fix.js" />
     <Content Include="scripts\ie10-viewport-bug-workaround.js" />
-    <Content Include="scripts\restaurantController.js" />
+    <Content Include="scripts\menuController.js" />
     <Content Include="scripts\restauRaterModule.js" />
     <Content Include="Web.config" />
   </ItemGroup>
