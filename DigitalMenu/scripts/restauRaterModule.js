@@ -1,1 +1,0 @@
-﻿var restauraterModule = angular.module('restaurater', []);
