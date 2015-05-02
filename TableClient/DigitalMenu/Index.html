@@ -3,6 +3,7 @@
 <head>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="http://cdn.flaticon.com/png/256/18518.png">
     <link href="css/carousel.css" rel="stylesheet">
     
     <title>The Happy Bloater Digital Menu</title>
@@ -97,12 +98,14 @@
             <div class="col-lg-4">
                 <img class="img-circle" src="images/dinner.png" alt="Starters and Mains" width="140" height="140">
                 <h2>Starters &amp; Mains</h2>
-                    <span ng-repeat="starter in menu.starters">
-                        {{starter.name}} - &pound;{{ starter.price | number:2}}<br/>
-                    </span>
-                    &bull;<br/>
-                <span ng-repeat="main in menu.mains">
-                    {{main.name}} - &pound;{{ main.price | number:2}}<br />
+                <span ng-repeat="(key,val) in starters">
+                    {{starters[key].Name}} - &pound;{{starters[key].Price | number:2}}
+                    <br />
+                </span>
+                &bull;<br />
+                <span ng-repeat="(key,val) in mains">
+                    {{mains[key].Name}} - &pound;{{ mains[key].Price | number:2}}
+                    <br />
                 </span>
                 <br />
                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -110,8 +113,9 @@
             <div class="col-lg-4">
                 <img class="img-circle" src="images/drinks.png" alt="Drinks" width="140" height="140">
                 <h2>Drinks</h2>
-                <span ng-repeat="drink in menu.drinks">
-                    {{drink.name}} - &pound;{{ drink.price | number:2}}<br />
+                <span ng-repeat="(key,val) in drinks">
+                    {{drinks[key].Name}} - &pound;{{ drinks[key].Price | number:2}}
+                    <br />
                 </span>
                 <br />
                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -119,8 +123,9 @@
             <div class="col-lg-4">
                 <img class="img-circle" src="images/dessert.png" alt="Desserts" width="140" height="140">
                 <h2>Desserts</h2>
-                <span ng-repeat="dessert in menu.desserts">
-                    {{dessert.name}} - &pound;{{ dessert.price | number:2}}<br />
+                <span ng-repeat="(key,val) in desserts">
+                    {{desserts[key].Name}} - &pound;{{ desserts[key].Price | number:2}}
+                    <br/>
                 </span>
                 <br />
                 <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -128,66 +133,68 @@
         </div>
 
         <!-- START THE FEATURETTES -->
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7" id="about">
-                <h2 class="featurette-heading">About. <span class="text-muted">Everything you need to know about The Happy Bloater.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <div id="featurettes">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7" id="about">
+                    <h2 class="featurette-heading">About. <span class="text-muted">Everything you need to know about The Happy Bloater.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive center-block" src="images/wut.png" alt="What is this all about?">
+                </div>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" src="images/wut.png" alt="What is this all about?">
-            </div>
-        </div>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="pull-right"><a href="#">Back to top</a></p>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7 col-md-push-5" id="contact">
-                <h2 class="featurette-heading">Contact. <span class="text-muted">How to get in touch.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7 col-md-push-5" id="contact">
+                    <h2 class="featurette-heading">Contact. <span class="text-muted">How to get in touch.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5 col-md-pull-7">
+                    <img class="featurette-image img-responsive center-block" src="images/email.png" alt="Email us">
+                </div>
             </div>
-            <div class="col-md-5 col-md-pull-7">
-                <img class="featurette-image img-responsive center-block" src="images/email.png" alt="Email us">
-            </div>
-        </div>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="pull-right"><a href="#">Back to top</a></p>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7" id="member">
-                <h2 class="featurette-heading">Become a Happy Bloater. <span class="text-muted">Join our exclusive club.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7" id="member">
+                    <h2 class="featurette-heading">Become a Happy Bloater. <span class="text-muted">Join our exclusive club.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive center-block" src="images/memberclub.png" alt="Member Card">
+                </div>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" src="images/memberclub.png" alt="Member Card">
-            </div>
-        </div>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="pull-right"><a href="#">Back to top</a></p>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7" id="facebook">
-                <h2 class="featurette-heading">Find us on Facebook! <span class="text-muted">Let's be bloat buddies.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7" id="facebook">
+                    <h2 class="featurette-heading">Find us on Facebook! <span class="text-muted">Let's be bloat buddies.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive center-block" src="images/fb.png" alt="Facebook">
+                </div>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" src="images/fb.png" alt="Facebook">
-            </div>
-        </div>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="pull-right"><a href="#">Back to top</a></p>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7" id="twitter">
-                <h2 class="featurette-heading">Follow us on Twitter! <span class="text-muted">Keep up to date with our latest menus.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7" id="twitter">
+                    <h2 class="featurette-heading">Follow us on Twitter! <span class="text-muted">Keep up to date with our latest menus.</span></h2>
+                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-responsive center-block" src="images/twitter.png" alt="Member Card">
+                </div>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" src="images/twitter.png" alt="Member Card">
-            </div>
-        </div>
 
-        <hr class="featurette-divider">
+            <hr class="featurette-divider">
+        </div>
         <!-- /END THE FEATURETTES -->
         <!-- FOOTER -->
         <footer>
@@ -208,6 +215,6 @@
     <script src="scripts/android-stock-browser-fix.js"></script>
     <!-- Custom -->
     <script src="scripts/restauRaterModule.js"></script>
-    <script src="scripts/menuController.js"></script>
+    <script src="scripts/menuController.js"></script>    
 </body>
 </html>

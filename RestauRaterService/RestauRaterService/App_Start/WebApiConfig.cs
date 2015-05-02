@@ -10,6 +10,8 @@ namespace RestauRaterService.App_Start
         public const string DEFAULT_ROUTE_NAME = "MyDefaultRoute";
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
+
             config.Routes.MapHttpRoute(
                 name: DEFAULT_ROUTE_NAME,
                 routeTemplate: "api/{controller}/{id}",
